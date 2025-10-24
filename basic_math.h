@@ -5,7 +5,7 @@ namespace ucr { namespace bcoe { namespace cs { namespace cs100 {
     double sin(double x);
     double cos(double x);
     double abs(double x);
-    double pow(int x, double y);
+    double pow(double x, double y);
     double round(double x);
 }}}}
 #endif

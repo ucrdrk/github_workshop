@@ -62,7 +62,7 @@ TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, ABS) {
     {
         using ucr::bcoe::cs::cs100::abs;
         ASSERT_DOUBLE_EQ(3.0, abs(3.0));
-        EXPECT_DOUBLE_EQ(3.0, cos(-3.0));
+        EXPECT_DOUBLE_EQ(3.0, abs(-3.0));
     }
 }
 
@@ -73,6 +73,33 @@ TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, ABS_NAN) {
         EXPECT_EQ(INFINITY, abs(INFINITY));
     }
 }
+
+TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, POW) {
+    {
+        using ucr::bcoe::cs::cs100::pow;
+        ASSERT_DOUBLE_EQ(9.0, pow(3.0, 2));
+        EXPECT_DOUBLE_EQ(-9.0, pow(-3.0, 2));
+    }
+}
+
+TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, POW_FRACTIONAL) {
+    {
+        using ucr::bcoe::cs::cs100::pow;
+        ASSERT_DOUBLE_EQ(3.0, pow(9.0, 0.5));
+        EXPECT_DOUBLE_EQ(-3.0, pow(-9.0, 0.5));
+    }
+}
+
+TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, ROUND) {
+    {
+        using ucr::bcoe::cs::cs100::round;
+        ASSERT_DOUBLE_EQ(3.0, round(3.4));
+        ASSERT_DOUBLE_EQ(4.0, round(3.5));
+        EXPECT_DOUBLE_EQ(-3.0, round(-3.4));
+        EXPECT_DOUBLE_EQ(-4.0, round(-3.5));
+    }
+}
+
 int main(int argc, char *argv[]) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
