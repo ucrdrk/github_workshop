@@ -241,48 +241,122 @@ Then run the tests with the following command:
 You should see something like the following:
 
 ```bash
-[==========] Running 3 tests from 1 test suite.
+[==========] Running 12 tests from 1 test suite.
 [----------] Global test environment set-up.
-[----------] 3 tests from CS100_TEST_SUITE
-[ RUN      ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_POSITIVE
-/home/harve/cs100/tdd/test.cpp:10: Failure
+[----------] 12 tests from CS100_TEST_SUITE_BASIC_MATH_TESTS
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SQRT_POSITIVE
+[       OK ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SQRT_POSITIVE (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SQRT_NEGATIVE
+[       OK ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SQRT_NEGATIVE (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SQRT_FLOAT_RESULT
+[       OK ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SQRT_FLOAT_RESULT (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SIN
+/home/harve/cs100/tdd/test.cpp:32: Failure
+Expected equality of these values:
+  ::sin(3.14159265358979323846)
+    Which is: 1.2246467991473532e-16
+  sin(3.14159265358979323846)
+    Which is: -1
+
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SIN (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SIN_NAN
+/home/harve/cs100/tdd/test.cpp:40: Failure
+Value of: std::isnan(sin((__builtin_nanf (""))))
+  Actual: false
+Expected: true
+
+/home/harve/cs100/tdd/test.cpp:41: Failure
+Value of: std::isnan(sin((__builtin_inff ())))
+  Actual: false
+Expected: true
+
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SIN_NAN (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.COS
+/home/harve/cs100/tdd/test.cpp:49: Failure
+Expected equality of these values:
+  ::cos(0)
+    Which is: 1
+  cos(0)
+    Which is: -1
+
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.COS (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.COS_NAN
+/home/harve/cs100/tdd/test.cpp:56: Failure
+Value of: std::isnan(cos((__builtin_nanf (""))))
+  Actual: false
+Expected: true
+
+/home/harve/cs100/tdd/test.cpp:57: Failure
+Value of: std::isnan(cos((__builtin_inff ())))
+  Actual: false
+Expected: true
+
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.COS_NAN (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ABS
+/home/harve/cs100/tdd/test.cpp:64: Failure
 Expected equality of these values:
   3.0
     Which is: 3
-  sqrt(9.0)
+  abs(3.0)
     Which is: nan
 
-[  FAILED  ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_POSITIVE (0 ms)
-[ RUN      ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_NEGATIVE
-[       OK ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_NEGATIVE (0 ms)
-[ RUN      ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_FLOAT_RESULT
-/home/harve/cs100/tdd/test.cpp:26: Failure
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ABS (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ABS_NAN
+/home/harve/cs100/tdd/test.cpp:73: Failure
 Expected equality of these values:
-  1.2
-  sqrt(1.44)
+  (__builtin_inff ())
+    Which is: inf
+  abs((__builtin_inff ()))
     Which is: nan
 
-/home/harve/cs100/tdd/test.cpp:27: Failure
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ABS_NAN (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.POW
+/home/harve/cs100/tdd/test.cpp:80: Failure
 Expected equality of these values:
-  0.6
-    Which is: 0.59999999999999998
-  sqrt(.36)
+  9.0
+    Which is: 9
+  pow(3.0, 2)
     Which is: nan
 
-[  FAILED  ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_FLOAT_RESULT (0 ms)
-[----------] 3 tests from CS100_TEST_SUITE (0 ms total)
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.POW (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.POW_FRACTIONAL
+/home/harve/cs100/tdd/test.cpp:88: Failure
+Expected equality of these values:
+  3.0
+    Which is: 3
+  pow(9.0, 0.5)
+    Which is: nan
+
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.POW_FRACTIONAL (0 ms)
+[ RUN      ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ROUND
+/home/harve/cs100/tdd/test.cpp:96: Failure
+Expected equality of these values:
+  3.0
+    Which is: 3
+  round(3.4)
+    Which is: nan
+
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ROUND (0 ms)
+[----------] 12 tests from CS100_TEST_SUITE_BASIC_MATH_TESTS (0 ms total)
 
 [----------] Global test environment tear-down
-[==========] 3 tests from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-[  FAILED  ] 2 tests, listed below:
-[  FAILED  ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_POSITIVE
-[  FAILED  ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_FLOAT_RESULT
+[==========] 12 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 9 tests, listed below:
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SIN
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.SIN_NAN
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.COS
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.COS_NAN
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ABS
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ABS_NAN
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.POW
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.POW_FRACTIONAL
+[  FAILED  ] CS100_TEST_SUITE_BASIC_MATH_TESTS.ROUND
 
- 2 FAILED TESTS
+ 9 FAILED TESTS
 ```
 
-Notice, that unlike last time in [Running the Tests](#running-the-tests), you fail only 2 tests, instead of 3. That's progress ;-).
+Notice, that unlike last time in [Running the Tests](#running-the-tests), you fail only 9 tests, instead of 12. That's progress ;-).
 
 ### Checking In Your Implementations of the functions
 
