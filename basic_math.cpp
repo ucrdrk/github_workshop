@@ -3,16 +3,16 @@
 
 namespace ucr { namespace bcoe { namespace cs { namespace cs100 {
     double sqrt(double x) {
-        return NAN;
+        return -1.0;
     }
 
     double sin(double x) {
-        return NAN;
+        return -1.0;
     }
 
     double cos(double x) {
 
-        return NAN;
+        return -1.0;
     }
     
     double abs(double x) {
