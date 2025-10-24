@@ -3,7 +3,7 @@
 
 namespace ucr { namespace bcoe { namespace cs { namespace cs100 {
     double sqrt(double x) {
-        return ::sqrt(x);
+        return -1.0;
     }
 
     double sin(double x) {

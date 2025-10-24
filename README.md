@@ -366,6 +366,55 @@ Expected equality of these values:
 
 Notice, that unlike last time in [Running the Tests](#running-the-tests), you fail only 9 tests, instead of 12. That's progress ;-).
 
-### Checking In Your Implementations of the functions
+### Getting Your Implementations of the functions Back to the Original Repository on Github
 
+Now you want to get your code back to the original GitHub repository, for which you don't have permission. Don't worry, there's a way to do that.
+
+First, you need to get the code back to your forked version of the repository. That's relatively easy, but we need to first address authentication.
+
+#### Authenticating for GitHub
+
+In the old days (yes, it was in color), we sent the username and password to authenticate ourselves to GitHub whenever we wanted to push code to it. However, to ensure stronger authentication, GitHub has moved to other techniques. We will use SSH keys.
+
+The first step is to create an SSH Key. Instructions for that process can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Once you've created the link, you need to link the public key to your account on GitHub. The directions for doing that can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Follow those directions before moving on to the next section.
+
+#### Committing your Code
+
+Before you can push your code, you need to commit your code in git. First, select which code you will be committing with the following command:
+
+```bash
+git add basic_math.cpp
+git commit -m "<Put a meaningful commit message here>"
+```
+
+If you changed other files and want to send them to your repository, add them to the list of files for the `git add` command.
+
+#### Pushing your code to your Repository
+
+Once you've properly added your SSH Key to GitHub, you can securely push your code to your repository.
+
+In the top directory (in other words, not the build directory) of your repository, type the following command in the shell:
+
+```bash
+git push
+```
+
+If the command succeeded, you should see something like the following:
+
+```bash
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 325 bytes | 325.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+To github.com:<your github name>/github_workshop.git
+   c378712..7b0b7a1  main -> main
+```
+
+#### Great, now what?
+
+Now yuou need to gently ask the author of the original code to pull in your changes. Luckily, GitHub provides a way to gently asked, and is called a Pull Request.  A pull request is done through GitHub.
+
+Got to your forked repository on GitHub after your have successfully pushed your changes, as described in the section above. On that page in your browser you should see information about your last commit, along with a button, name "Contribute" that will allow you to create a pull request. Click on that button and select "Open pull request". 
 
