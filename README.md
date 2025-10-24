@@ -418,3 +418,8 @@ Now yuou need to gently ask the author of the original code to pull in your chan
 
 Got to your forked repository on GitHub after your have successfully pushed your changes, as described in the section above. On that page in your browser you should see information about your last commit, along with a button, name "Contribute" that will allow you to create a pull request. Click on that button and select "Open pull request". 
 
+You will be presented with a bag that allows you to give more information to the original developer about the code you are requesting to be added. Put in a brief description under "Add a Description" and then press the "Create pull request" button.
+
+It will give you information about the testing of this pull request and send it to the original developer.
+
+Now watch the instructor as they show how the Pull Request is handled in the original repository.
