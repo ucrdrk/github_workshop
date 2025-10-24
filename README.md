@@ -106,6 +106,67 @@ to this:
 
 Now do it yourself. Pick one of the functions and provide an implementation. It will be interesting to see if by letting you all choose any function you want we get implementations of all the functions.
 
+### Testing Your Changes
+
+After making your changes, we need to test that at least one new test passes. Go to the build directory and build the code with your changes using the following command in the terminal:
+
+```bash
+cd build
+cmake --build . --config Debug
+```
+
+Then run the tests with the following command:
+
+```bash
+./test
+```
+
+You should see something like the following:
+
+```bash
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from CS100_TEST_SUITE
+[ RUN      ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_POSITIVE
+/home/harve/cs100/tdd/test.cpp:10: Failure
+Expected equality of these values:
+  3.0
+    Which is: 3
+  sqrt(9.0)
+    Which is: nan
+
+[  FAILED  ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_POSITIVE (0 ms)
+[ RUN      ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_NEGATIVE
+[       OK ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_NEGATIVE (0 ms)
+[ RUN      ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_FLOAT_RESULT
+/home/harve/cs100/tdd/test.cpp:26: Failure
+Expected equality of these values:
+  1.2
+  sqrt(1.44)
+    Which is: nan
+
+/home/harve/cs100/tdd/test.cpp:27: Failure
+Expected equality of these values:
+  0.6
+    Which is: 0.59999999999999998
+  sqrt(.36)
+    Which is: nan
+
+[  FAILED  ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_FLOAT_RESULT (0 ms)
+[----------] 3 tests from CS100_TEST_SUITE (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_POSITIVE
+[  FAILED  ] CS100_TEST_SUITE.BASIC_MATH_TESTS_SQRT_FLOAT_RESULT
+
+ 2 FAILED TESTS
+```
+
+Notice, that unlike last time in [Running the Tests](#running-the-tests), you fail only 2 tests, instead of 3. That's progress ;-).
+
 ### Checking In Your Implementations of the functions
 
 
