@@ -1,14 +1,14 @@
 # GitHub Workshop
 
-Repo for GitHub Workshops activities
+Repo for GitHub Workshop activities 
 
 ## Getting the Repository
 
-GitHub protects outside programmers from changing files under the control of a programmer, even if the repository is public. Therefore, in order to protect the original code and still allow the posibility of changes from outside collaborators, we will use the fork feature of GitHub for this workshop activity.
+GitHub protects outside programmers from changing files under the control of another programmer, even if the repository is public. Therefore, to protect the original code while still allowing changes from outside collaborators, we will use GitHub’s **fork** feature for this workshop activity. 
 
-So the first step will be to fork the GitHub Workshop repository. Go to the repository at https://github.com/ucrdrk/github-workshop. In the upper right-head side between Watch adn Star, you will find Fork. Select the down arrow and then select "Create New Fork". On the next page your will see different fields that can be changed to create the fork. Just accept all the default values and click "Create Fork" at the bottom.
+The first step is to fork the GitHub Workshop repository. Go to the repository at [https://github.com/ucrdrk/github-workshop](https://github.com/ucrdrk/github-workshop). In the upper right-hand side between **Watch** and **Star**, you will find **Fork**. Select the down arrow, then select “Create New Fork.” On the next page, you will see several fields that can be changed to create the fork. Just accept all the default values and click **Create Fork** at the bottom. 
 
-You have now created a new repository that you own, that is an exact copy of the original. The next step is to clone this forked repository to your local computer.
+You have now created a new repository that you own, which is an exact copy of the original. The next step is to clone this forked repository to your local computer.
 
 To clone the forked repository, type the following command into your shell:
 
@@ -16,20 +16,20 @@ To clone the forked repository, type the following command into your shell:
 git clone https://github.com/<your username>/github-workshop
 ```
 
-Replace `<your username>` including the `<` and `>` with your GitHub username.
+Replace `<your username>` (including the `<` and `>`) with your GitHub username. 
 
 ## Initializing Submodules
 
-This repository uses the GoogleTest submodule for unit testing. In order to initialize this submodule in the repository, type the following command in the directory that the repository was cloned into:
+This repository uses the GoogleTest submodule for unit testing. To initialize this submodule in the repository, type the following commands in the directory where the repository was cloned:
 
 ```bash
 git submodule init
 git submodule update
 ```
 
-## Building the project on the Command Line
+## Building the Project on the Command Line
 
-This project uses CMake for build. To build this project on the command line, type the following commands into your shell:
+This project uses **CMake** for building. To build this project on the command line, type the following commands into your shell: 
 
 ```bash
 mkdir build && cd build
@@ -45,7 +45,7 @@ Once the build is complete, you can run the unit tests. To run the unit tests, t
 ./test
 ```
 
-The output of running these tests should all fail, and the output should look like the following:
+The output of running these tests should show all tests failing, and the output should look like the following: 
 
 ```bash
 [==========] Running 12 tests from 1 test suite.
@@ -195,45 +195,44 @@ Expected equality of these values:
 
 12 FAILED TESTS
 ```
-
 ## Next Steps
 
-Next we'll add some code to make the tests pass. 
+Next, we’ll add some code to make the tests pass. 
 
-This project uses a concept called Test Drive Design (TDD). In TDD tests are written before the implementation, and then the developer adds code to make the tests pass. This approach tends to lead to cleaner, more testable code. 
+This project uses a concept called **Test-Driven Development (TDD)**. In TDD, tests are written before the implementation, and then the developer adds code to make the tests pass. This approach tends to lead to cleaner, more testable code. 
 
-Your job is to make at least one test pass. 
+Your job is to make at least one test pass.
 
-In the C++ file `basic_math.cpp` there are 6 basic math functions. The following is a list of these functions:
+In the C++ file `basic_math.cpp`, there are six basic math functions. The following is a list of these functions: 
 
 1. `double sqrt(double x)`
-1. `double sin(double x)`
-1. `double cos(double x)`
-1. `double abs(double x)`
-1. `double pow(double x)`
-1. `double round(double x)`
+2. `double sin(double x)`
+3. `double cos(double x)`
+4. `double abs(double x)`
+5. `double pow(double x)`
+6. `double round(double x)`
 
-Choose one of these functions to implement. Don't worry, it'll be easy. We're going to use implementations of these functions provided by the Standard Template Library. So, for example, to implement the `sqrt` function we will change the following code:
+Choose one of these functions to implement. Don’t worry—it’ll be easy. We’re going to use implementations of these functions provided by the **Standard Template Library (STL)**. For example, to implement the `sqrt` function, we will change the following code:
 
 ```c++
-    double sqrt(double x) {
-        return NAN;
-    }
+double sqrt(double x) {
+    return NAN;
+}
 ```
 
 to this:
 
 ```c++
-    double sqrt(double x) {
-        return ::sqrt(x);
-    }
+double sqrt(double x) {
+    return ::sqrt(x);
+}
 ```
 
-Now do it yourself. Pick one of the functions and provide an implementation. It will be interesting to see if by letting you all choose any function you want we get implementations of all the functions.
+Now do it yourself. Pick one of the functions and provide an implementation. It will be interesting to see if, by letting everyone choose any function they want, we get implementations of all the functions. 
 
 ### Testing Your Changes
 
-After making your changes, we need to test that at least one new test passes. Go to the build directory and build the code with your changes using the following command in the terminal:
+After making your changes, test that at least one new test passes. Go to the build directory and build the code with your changes using the following command:
 
 ```bash
 cd build
@@ -246,7 +245,7 @@ Then run the tests with the following command:
 ./test
 ```
 
-You should see something like the following:
+You should see something like the following: 
 
 ```bash
 [==========] Running 12 tests from 1 test suite.
@@ -364,23 +363,23 @@ Expected equality of these values:
  9 FAILED TESTS
 ```
 
-Notice, that unlike last time in [Running the Tests](#running-the-tests), you fail only 9 tests, instead of 12. That's progress ;-).
+Notice that, unlike last time in [Running the Tests](#running-the-tests), you now fail only nine tests instead of twelve. That’s progress 😉. 
 
-### Getting Your Implementations of the functions Back to the Original Repository on Github
+### Getting Your Implementations Back to the Original Repository on GitHub
 
-Now you want to get your code back to the original GitHub repository, for which you don't have permission. Don't worry, there's a way to do that.
+Now you want to get your code back to the original GitHub repository, for which you don’t have permission. Don’t worry—there’s a way to do that. 
 
-First, you need to get the code back to your forked version of the repository. That's relatively easy, but we need to first address authentication.
+First, you need to get the code back to your forked version of the repository. That’s relatively easy, but we first need to address authentication.
 
-#### Authenticating for GitHub
+#### Authenticating with GitHub
 
-In the old days (yes, it was in color), we sent the username and password to authenticate ourselves to GitHub whenever we wanted to push code to it. However, to ensure stronger authentication, GitHub has moved to other techniques. We will use SSH keys.
+In the old days (yes, it was in color), we sent the username and password to authenticate ourselves with GitHub whenever we wanted to push code. However, to ensure stronger authentication, GitHub now uses other techniques. We will use **SSH keys**. 
 
-The first step is to create an SSH Key. Instructions for that process can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Once you've created the link, you need to link the public key to your account on GitHub. The directions for doing that can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Follow those directions before moving on to the next section.
+The first step is to create an SSH key. Instructions for that process can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Once you’ve created the key, you need to link the public key to your account on GitHub. Directions for doing that can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Follow those directions before moving on to the next section. 
 
-#### Committing your Code
+#### Committing Your Code
 
-Before you can push your code, you need to commit your code in git. First, select which code you will be committing with the following command:
+Before you can push your code, you need to commit it in Git. First, select which code you will be committing with the following command: 
 
 ```bash
 git add basic_math.cpp
@@ -389,9 +388,9 @@ git commit -m "<Put a meaningful commit message here>"
 
 If you changed other files and want to send them to your repository, add them to the list of files for the `git add` command.
 
-#### Pushing your code to your Repository
+#### Pushing Your Code to Your Repository
 
-Once you've properly added your SSH Key to GitHub, you can securely push your code to your repository.
+Once you’ve properly added your SSH key to GitHub, you can securely push your code to your repository.
 
 In the top directory (in other words, not the build directory) of your repository, type the following command in the shell:
 
@@ -399,7 +398,7 @@ In the top directory (in other words, not the build directory) of your repositor
 git push
 ```
 
-If the command succeeded, you should see something like the following:
+If the command succeeds, you should see something like the following:
 
 ```bash
 Enumerating objects: 5, done.
@@ -412,14 +411,14 @@ To github.com:<your github name>/github_workshop.git
    c378712..7b0b7a1  main -> main
 ```
 
-#### Great, now what?
+#### Great, Now What?
 
-Now yuou need to gently ask the author of the original code to pull in your changes. Luckily, GitHub provides a way to gently asked, and is called a Pull Request.  A pull request is done through GitHub.
+Now you need to gently ask the author of the original code to pull in your changes. Luckily, GitHub provides a way to do that—it’s called a **Pull Request**. 
 
-Got to your forked repository on GitHub after your have successfully pushed your changes, as described in the section above. On that page in your browser you should see information about your last commit, along with a button, name "Contribute" that will allow you to create a pull request. Click on that button and select "Open pull request". 
+Go to your forked repository on GitHub after you have successfully pushed your changes, as described in the section above. On that page in your browser, you should see information about your last commit, along with a button named **Contribute**, which allows you to create a pull request. Click that button and select **Open pull request**. 
 
-You will be presented with a bag that allows you to give more information to the original developer about the code you are requesting to be added. Put in a brief description under "Add a Description" and then press the "Create pull request" button.
+You will be presented with a page that allows you to give more information to the original developer about the code you are requesting to be added. Enter a brief description under **Add a Description** and then press the **Create pull request** button. 
 
-It will give you information about the testing of this pull request and send it to the original developer.
+You’ll see information about the testing of this pull request, and it will be sent to the original developer.
 
-Now watch the instructor as they show how the Pull Request is handled in the original repository.
+Now watch the instructor as they demonstrate how the pull request is handled in the original repository.
