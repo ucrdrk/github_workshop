@@ -15,6 +15,7 @@ git clone https://github.com/ucrdrk/github-workshop
 This repository uses the GoogleTest submodule for unit testing. In order to initialize this submodule in the repository, type the following command in the directory that the repository was cloned into:
 
 ```bash
+git submodule init
 git submodule update
 ```
 
