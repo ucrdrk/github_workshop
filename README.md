@@ -4,11 +4,19 @@ Repo for GitHub Workshops activities
 
 ## Getting the Repository
 
-To clone this repository, type the following command into your shell:
+GitHub protects outside programmers from changing files under the control of a programmer, even if the repository is public. Therefore, in order to protect the original code and still allow the posibility of changes from outside collaborators, we will use the fork feature of GitHub for this workshop activity.
+
+So the first step will be to fork the GitHub Workshop repository. Go to the repository at https://github.com/ucrdrk/github-workshop. In the upper right-head side between Watch adn Star, you will find Fork. Select the down arrow and then select 'Create New Fork'. On the next page your will see different fields that can be changed to create the fork. Just accept all the default values and click "Create Fork" at the bottom.
+
+You have now created a new repository that you own, that is an exact copy of the original. The next step is to clone this forked repository to your local computer.
+
+To clone the forked repository, type the following command into your shell:
 
 ```bash
-git clone https://github.com/ucrdrk/github-workshop
+git clone https://github.com/<your username>/github-workshop
 ```
+
+Replace `<your username>` including the `<` and `>` with your GitHub username.
 
 ## Initializing Submodules
 
