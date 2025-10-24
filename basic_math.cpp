@@ -3,8 +3,7 @@
 
 namespace ucr { namespace bcoe { namespace cs { namespace cs100 {
     double sqrt(double x) {
-        throw std::runtime_error("error");
-        return ::sqrt(x);
+        return NAN;
     }
 
     double sin(double x) {

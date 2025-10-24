@@ -73,4 +73,39 @@ C++ exception with description "error" thrown in the test body.
 
 ## Next Steps
 
-These are the next steps. And some more. 
+Next we'll add some code to make the tests pass. 
+
+This project uses a concept called Test Drive Design (TDD). In TDD tests are written before the implementation, and then the developer adds code to make the tests pass. This approach tends to lead to cleaner, more testable code. 
+
+Your job is to make at least one test pass. 
+
+In the C++ file `basic_math.cpp` there are 6 basic math functions. The following is a list of these functions:
+
+1. `double sqrt(double x)`
+1. `double sin(double x)`
+1. `double cos(double x)`
+1. `double abs(double x)`
+1. `double pow(double x)`
+1. `double round(double x)`
+
+Choose one of these functions to implement. Don't worry, it'll be easy. We're going to use implementations of these functions provided by the Standard Template Library. So, for example, to implement the `sqrt` function we will change the following code:
+
+```c++
+    double sqrt(double x) {
+        return NAN;
+    }
+```
+
+to this:
+
+```c++
+    double sqrt(double x) {
+        return ::sqrt(x);
+    }
+```
+
+Now do it yourself. Pick one of the functions and provide an implementation. It will be interesting to see if by letting you all choose any function you want we get implementations of all the functions.
+
+### Checking In Your Implementations of the functions
+
+
