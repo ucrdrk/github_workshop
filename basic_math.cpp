@@ -3,28 +3,28 @@
 
 namespace ucr { namespace bcoe { namespace cs { namespace cs100 {
     double sqrt(double x) {
-        return -1.0;
+        return ::sqrt(x);
     }
 
     double sin(double x) {
-        return -1.0;
+        return ::sin(x);
     }
 
     double cos(double x) {
 
-        return -1.0;
+        return ::cos(x);
     }
     
     double abs(double x) {
-        return NAN;
+        return ::abs(x);
     }
     
     double pow(double x, double y) {
-        return NAN;
+        return ::pow(x,y);
     }
     
     double round(double x) {
-        return NAN;
+        return ::round(x);
     }
     
 }}}}
