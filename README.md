@@ -10,6 +10,17 @@ The first step is to fork the GitHub Workshop repository. Go to the repository a
 
 You have now created a new repository that you own, which is an exact copy of the original. The next step is to clone this forked repository to your local computer.
 
+#### Authenticating with GitHub
+
+Before we can clone this repository to our CodeSpace we need to address how we are going to authenticate with GitHub.
+
+In the old days (yes, it was in color), we sent the username and password to authenticate ourselves with GitHub whenever we wanted to push code. However, to ensure stronger authentication, GitHub now uses other techniques. We will use **SSH keys**. 
+
+The first step is to create an SSH key. Instructions for that process can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Once you’ve created the key, you need to link the public key to your account on GitHub. Directions for doing that can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Follow those directions before moving on to the next section. 
+
+
+### Cloning the Repository
+
 To clone the forked repository, type the following command into your shell:
 
 ```bash
@@ -371,12 +382,6 @@ Now you want to get your code back to the original GitHub repository, for which 
 
 First, you need to get the code back to your forked version of the repository. That’s relatively easy, but we first need to address authentication.
 
-#### Authenticating with GitHub
-
-In the old days (yes, it was in color), we sent the username and password to authenticate ourselves with GitHub whenever we wanted to push code. However, to ensure stronger authentication, GitHub now uses other techniques. We will use **SSH keys**. 
-
-The first step is to create an SSH key. Instructions for that process can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Once you’ve created the key, you need to link the public key to your account on GitHub. Directions for doing that can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account). Follow those directions before moving on to the next section. 
-
 #### Committing Your Code
 
 Before you can push your code, you need to commit it in Git. First, select which code you will be committing with the following command: 
@@ -390,7 +395,7 @@ If you changed other files and want to send them to your repository, add them to
 
 #### Pushing Your Code to Your Repository
 
-Once you’ve properly added your SSH key to GitHub, you can securely push your code to your repository.
+Once you’ve properly added your [SSH key to GitHub](#authenticating-with-github), you can securely push your code to your repository.
 
 In the top directory (in other words, not the build directory) of your repository, type the following command in the shell:
 
