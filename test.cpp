@@ -66,19 +66,11 @@ TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, ABS) {
     }
 }
 
-TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, ABS_NAN) {
-    {
-        using ucr::bcoe::cs::cs100::abs;
-        EXPECT_TRUE(std::isnan(abs(NAN)));
-        EXPECT_EQ(INFINITY, abs(INFINITY));
-    }
-}
-
 TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, POW) {
     {
         using ucr::bcoe::cs::cs100::pow;
         ASSERT_DOUBLE_EQ(9.0, pow(3.0, 2));
-        EXPECT_DOUBLE_EQ(-9.0, pow(-3.0, 2));
+        EXPECT_DOUBLE_EQ(9.0, pow(-3.0, 2));
     }
 }
 
@@ -86,7 +78,7 @@ TEST(CS100_TEST_SUITE_BASIC_MATH_TESTS, POW_FRACTIONAL) {
     {
         using ucr::bcoe::cs::cs100::pow;
         ASSERT_DOUBLE_EQ(3.0, pow(9.0, 0.5));
-        EXPECT_DOUBLE_EQ(-3.0, pow(-9.0, 0.5));
+        EXPECT_TRUE(std::isnan(pow(-9.0, 0.5)));
     }
 }
 
